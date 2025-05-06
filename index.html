@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Home</title>
+</head>
+<body class="bg-gray-400">
+
+    <!-- ////////////////////// -->
+        <!-- NAVIGATION BAR -->
+    <!-- ////////////////////// -->
+
+    <!-- Menú para desktop -->
+    <nav class="hidden sm:flex h-30 justify-center items-center w-full m-auto z-5 relative">
+        <!-- nav content -->
+        <div class="flex bg-gray-900 h-20 justify-between items-center shadow-xl rounded-2xl w-[97.5%] m-auto my-3 relative">
+            <!-- nav-logo -->
+            <section class="">
+                <img class="w-12 ml-20" src="img/portfolio-svgrepo-com.svg" alt="">
+            </section>
+            
+            <!-- nav-menu content -->
+            <section class="">
+                <!-- nav-menu -->
+                <ul class="flex gap-6 justify-center items-center">
+                    <!-- menu-items -->
+                    <a href="index.html"><li class="text-gray-200 font-bold text-xl hover:text-gray-400 cursor-pointer">Inicio</li></a>
+                    <a href="Projects.html"><li class="text-gray-200 font-bold text-xl hover:text-gray-400 cursor-pointer">Products</li></a>
+                    <a href="About.html"><li class="text-gray-200 font-bold text-xl hover:text-gray-400 cursor-pointer">Contact</li></a>
+                    <a class="relative" id="changeColor" href="#"><li class=""><img class="w-[21px] mx-10" src="img/settingsw.svg" alt=""></li>
+                        <!-- Menú desplegable -->
+                        <div id="colorMenu" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-lg z-50">
+                            <button id="changeBgBtn" class="w-full text-left px-4 py-2 text-gray-200 hover:bg-gray-700 rounded-lg">
+                                Cambiar Fondo
+                            </button>
+                            <button id="changeTextBtn" class="w-full text-left px-4 py-2 text-gray-200 hover:bg-gray-700 rounded-lg">
+                                Cambiar Fuentes
+                            </button>
+                        </div>
+                    </a>
+                </ul>
+            </section>
+        </div>
+    </nav>
+
+    <!-- ////////////////////// -->
+    <!-- NAVIGATION BAR MOVIL -->
+    <!-- ////////////////////// -->
+    <nav class="sm:hidden flex h-30 justify-center items-center w-full m-auto z-5 relative">
+        <!-- nav content -->
+        <div class="flex bg-gray-900 h-20 justify-between items-center shadow-xl rounded-2xl w-[97.5%] m-auto my-3 relative">
+            
+            <!-- nav-logo -->
+            <section class="">
+                <img class="w-12 ml-4" src="img/portfolio-svgrepo-com.svg" alt="">
+            </section>
+            
+            <!-- Menu button -->
+            <button id="menuButton" class="mr-4 text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu-->
+        <div id="mobileMenu" class="hidden absolute top-22 w-[97.5%] m-auto bg-gray-900 shadow-xl rounded-b-2xl">
+            <ul class="flex flex-col items-center py-4">
+                <a href="index.html" class="w-full text-center py-3"><li class="text-gray-200 font-bold text-xl hover:text-gray-400">Inicio</li></a>
+                <a href="Projects.html" class="w-full text-center py-3"><li class="text-gray-200 font-bold text-xl hover:text-gray-400">Products</li></a>
+                <a href="About.html" class="w-full text-center py-3"><li class="text-gray-200 font-bold text-xl hover:text-gray-400">Contact</li></a>
+                <a href="#" class="w-full text-center py-3"><li class="flex justify-center"><img class="w-[21px]" src="img/settingsw.svg" alt=""></li></a>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MOBILE NAVBAR SCRIPT -->
+    <script>
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+    <!-- ////////////////////// -->
+        <!-- MAIN SECTION -->
+    <!-- ////////////////////// -->
+    <main class="flex overflow-hidden flex-col rounded-2xl w-[97.5%] m-auto h-full shadow-xl gap-3"> 
+        <!-- SLIDER SECTION-->
+        <section class="rounded-2xl overflow-hidden" >
+            <ul class="">
+                <li class="bg-amber-900 w-full max-h-[90vh]"><img class="object-cover" src="img/wallhaven-o5k7kl_1920x1080.png" alt=""></li>
+            </ul>
+        </section>
+
+        <!-- PRESENTATION SECTION-->
+        <section class="sm:flex :flex-col gap-3 overflow-hidden">
+
+                <!-- CATEGORIES -->
+                <section class="sm: w-full :flex-auto text-[#fffc] w-[60%]">
+                    
+                    
+                    <!-- title -->
+                    <h2 class="flex justify-center bg-[#259] rounded-2xl p-3 font-bold">PROJECTS</h2>                      
+
+                    <!-- items container -->
+                    <div class="flex flex-col gap-3 justify-between h-[calc(100%-40px)] py-3 ">
+
+                        <!-- items -->
+                        <div class="flex bg-gray-900 rounded-2xl justify-center items-center h-full font-bold">Project_1</div>                    
+                        <div class="flex bg-gray-900 rounded-2xl justify-center items-center h-full font-bold">Project_2</div>                                        
+                        <div class="flex bg-gray-900 rounded-2xl justify-center items-center h-full font-bold">Project_3</div>                                        
+                        <div class="flex bg-gray-900 rounded-2xl justify-center items-center h-full font-bold">Project_4</div>                                        
+                        <div class="flex bg-gray-900 rounded-2xl justify-center items-center h-full font-bold">Project_5</div> 
+
+                    </div>
+                </section>
+                    
+                <!-- DESCRIPTION -->
+                <section class="flex-auto text-[#fffc] w-full">
+
+                    
+                    <!-- title -->
+                    <h2 class="flex justify-center bg-[#259] rounded-2xl p-3 font-bold">DESCRIPTION</h2>
+
+                    <!-- items container -->
+                    <div class="flex flex-col gap-3 justify-between h-[calc(100%-40px)]  py-3">
+
+                        <!-- items -->
+                        <div class="flex flex-col bg-gray-900 rounded-2xl h-full justify-center items-center">                            
+
+                            <div class="w-[90%] h-[90%] overflow-hidden">
+                                <h3 class="font-bold">Project</h3>
+                                <br>
+                                <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quo optio sed consequatur quidem sint odit explicabo, cupiditate nemo doloremque recusandae sequi distinctio minus non deleniti reprehenderit maxime amet? Provident?
+                                </p>
+                            </div>
+                        </div>   
+
+                        <div class="flex flex-col bg-gray-900 rounded-2xl h-full justify-center items-center">
+
+                            
+                            
+                            <div class="w-[90%] h-[90%] overflow-hidden">
+                                <h3 class="font-bold">Project</h3>
+                                <br>
+                                <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quo optio sed consequatur quidem sint odit explicabo, cupiditate nemo doloremque recusandae sequi distinctio minus non deleniti reprehenderit maxime amet? Provident?
+                                </p>
+                            </div>
+                        </div> 
+
+                    </div>      
+                </section>
+
+                <!-- BACKGROUND -->
+                <section class="flex-auto text-[#fffc] w-full">
+
+                    <!-- title -->
+                    <h2 class="flex justify-center bg-[#259] rounded-2xl p-3 font-bold">BACKGROUND</h2>
+
+                    <!-- items container -->
+                    <div class="flex flex-col gap-3 justify-between h-[calc(100%-40px)] py-3">
+
+                        <!-- items -->
+                        <div class="flex flex-col bg-gray-900 rounded-2xl h-full justify-center items-center">
+
+                            <div class="w-[90%] h-[90%] mb-10">
+                                <h3 class="font-bold">About me</h3>
+                                <br>
+                                <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quo optio sed consequatur quidem sint odit explicabo, cupiditate nemo doloremque recusandae sequi distinctio minus non deleniti reprehenderit maxime amet? Provident?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt voluptatibus fuga saepe, incidunt, facilis laudantium pariatur quos nihil dolore vero voluptates ad eum, reiciendis tenetur quae tempore. Quae, accusantium voluptates?
+                                </p>                                
+                                <br>
+                                <br>
+
+                                <h3 class="font-bold">Expirience</h3>
+                                <br>
+                                <p class="">
+                                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
+                                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
+                                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
+                                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
+                                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
+                                </p>
+                            </div> 
+                        </div>
+
+                    </div>   
+                </section>   
+
+        </section>
+        
+        <!-- REVIEW -->
+        <section class="flex flex-col my-3 gap-3 overflow-hidden">
+
+            <div class="md:flex sm:flex rounded-2xl h-full bg-gray-700 justify-evenly items-center gap-10 px-10 p-7">
+                
+                <div class="h-full w-full bg-gray-900 rounded-2xl text-[#fffc] p-10 ">
+                    <h3 class="font-bold">Review</h3>
+                    <br>
+                    <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quo optio sed consequatur quidem sint odit explicabo.
+                    </p>
+                </div>  
+
+                <div class="h-full w-full bg-gray-900 rounded-2xl text-[#fffc] p-10 ">
+                    <h3 class="font-bold">Review</h3>
+                    <br>
+                    <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quo optio sed consequatur quidem sint odit explicabo.
+                    </p>
+                </div>   
+                              
+                <div class="h-full w-full bg-gray-900 rounded-2xl text-[#fffc] p-10 ">
+                    <h3 class="font-bold">Review</h3>
+                    <br>
+                    <p class="">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem quo optio sed consequatur quidem sint odit explicabo.
+                    </p>
+                </div>                                         
+            </div>
+        </section>
+
+        <!-- FOOTERS -->
+        <section class="flex rounded-2xl h-30 bg-gray-700 justify-center items-center font-bold text-xl text-[#fffc]">JH-Cul-All Rights reserved @</section>
+    </main>
+    <script>
+        // Función para generar un color aleatorio en formato hexadecimal
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Función para obtener un color de texto que contraste con el fondo
+        function getContrastColor(hexColor) {
+            const r = parseInt(hexColor.slice(1, 3), 16);
+            const g = parseInt(hexColor.slice(3, 5), 16);
+            const b = parseInt(hexColor.slice(5, 7), 16);
+            
+            // Calcular el brillo del color de fondo
+            const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+            
+            // Array de colores para fondos claros
+            const lightColors = [
+                '#000000', // Negro
+                '#1a237e', // Azul oscuro
+                '#4a148c', // Púrpura oscuro
+                '#b71c1c', // Rojo oscuro
+                '#1b5e20', // Verde oscuro
+                '#880e4f'  // Rosa oscuro
+            ];
+            
+            // Array de colores para fondos oscuros
+            const darkColors = [
+                '#ffffff', // Blanco
+                '#e3f2fd', // Azul claro
+                '#f3e5f5', // Púrpura claro
+                '#ffebee', // Rojo claro
+                '#e8f5e9', // Verde claro
+                '#fce4ec'  // Rosa claro
+            ];
+            
+            // Seleccionar un color aleatorio del array apropiado
+            const colorArray = brightness > 128 ? lightColors : darkColors;
+            return colorArray[Math.floor(Math.random() * colorArray.length)];
+        }
+
+        // Elementos del DOM
+        const changeColorBtn = document.getElementById('changeColor');
+        const colorMenu = document.getElementById('colorMenu');
+        const changeBgBtn = document.getElementById('changeBgBtn');
+        const changeTextBtn = document.getElementById('changeTextBtn');
+
+        // Mostrar/ocultar menú al hacer clic en el botón de configuración
+        changeColorBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            colorMenu.classList.toggle('hidden');
+        });
+
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', (e) => {
+            if (!changeColorBtn.contains(e.target)) {
+                colorMenu.classList.add('hidden');
+            }
+        });
+
+        // Cambiar solo el fondo al hacer clic en el botón
+        changeBgBtn.addEventListener('click', () => {
+            const newBgColor = getRandomColor();
+            document.body.style.backgroundColor = newBgColor;
+            colorMenu.classList.add('hidden');
+        });
+
+        // Cambiar solo el color del texto al hacer clic en el botón
+        changeTextBtn.addEventListener('click', () => {
+            const currentBgColor = window.getComputedStyle(document.body).backgroundColor;
+            const rgbToHex = (rgb) => {
+                const rgbValues = rgb.match(/\d+/g);
+                return '#' + rgbValues.map(x => {
+                    const hex = parseInt(x).toString(16);
+                    return hex.length === 1 ? '0' + hex : hex;
+                }).join('');
+            };
+            const newTextColor = getContrastColor(rgbToHex(currentBgColor));
+            
+            // Cambiar color de texto para todos los elementos de texto
+            const textElements = document.querySelectorAll('h1, h2, h3, p, li, a, button, input, textarea');
+            textElements.forEach(element => {
+                element.style.color = newTextColor;
+            });
+            
+            colorMenu.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

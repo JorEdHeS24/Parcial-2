@@ -116,20 +116,17 @@ function initializeEmailJS() {
                 
                 // Datos para el correo que recibirás tú
                 const dataToYou = {
-                    from_name: `${formData.get('name')} ${formData.get('lastname')}`,
-                    from_email: email,
+                    name: `${formData.get('name')} ${formData.get('lastname')}`,
+                    email: email,
                     phone: formData.get('phone'),
                     message: formData.get('message'),
-                    to_name: "Admin", // Nombre del destinatario
-                    to_email: "tu_correo@ejemplo.com" // Reemplaza con tu correo real
+                    reply_to: email
                 };
 
                 // Datos para el correo de confirmación al usuario
                 const dataToUser = {
-                    to_name: formData.get('name'),
-                    to_email: email,
-                    from_name: "Admin",
-                    from_email: "gerjack92@gmail.com", // Reemplaza con tu correo real
+                    name: formData.get('name'),
+                    email: email,
                     message: `Gracias por contactarnos ${formData.get('name')}. Hemos recibido tu mensaje y nos pondremos en contacto contigo pronto.`
                 };
                 
@@ -138,14 +135,16 @@ function initializeEmailJS() {
                     const response1 = await emailjs.send(
                         'service_a6xn1lb',
                         'template_yjbevse',
-                        dataToYou
+                        dataToYou,
+                        "4WCAuPotcl23Zl9V4"
                     );
 
                     // Enviar correo de confirmación al usuario
                     const response2 = await emailjs.send(
                         'service_a6xn1lb',
                         'template_c6mdiyf',
-                        dataToUser
+                        dataToUser,
+                        "4WCAuPotcl23Zl9V4"
                     );
                     
                     if (response1.status === 200 && response2.status === 200) {
@@ -156,7 +155,7 @@ function initializeEmailJS() {
                     }
                 } catch (error) {
                     console.error('Error:', error);
-                    alert('Error al enviar el mensaje: ' + error.text);
+                    alert('Error al enviar el mensaje');
                 }
             });
         }

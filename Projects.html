@@ -12,66 +12,76 @@
     <!-- ////////////////////// -->
 
     <!-- Menú para desktop -->
-    <nav class="hidden sm:flex h-30 justify-center items-center w-full m-auto z-5 relative">
-        <!-- nav content -->
-        <div class="flex bg-gray-900 h-20 justify-between items-center shadow-xl rounded-2xl w-[97.5%] m-auto my-3 relative">
-            <!-- nav-logo -->
-            <section class="">
-                <img class="w-12 ml-20" src="img/portfolio-svgrepo-com.svg" alt="">
-            </section>
-            
-            <!-- nav-menu content -->
-            <section class="">
-                <!-- nav-menu -->
-                <ul class="flex gap-6 justify-center items-center">
-                    <!-- menu-items -->
-                    <a href="index.html"><li class="text-gray-200 font-bold text-xl hover:text-gray-400 cursor-pointer">Inicio</li></a>
-                    <a href="Projects.html"><li class="text-gray-200 font-bold text-xl hover:text-gray-400 cursor-pointer">Products</li></a>
-                    <a href="About.html"><li class="text-gray-200 font-bold text-xl hover:text-gray-400 cursor-pointer">Contact</li></a>
-                    <a class="relative" id="changeColor" href="#"><li class=""><img class="w-[21px] mx-10" src="img/settingsw.svg" alt=""></li>
-                        <!-- Menú desplegable -->
-                        <div id="colorMenu" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-lg z-50">
-                            <button id="changeBgBtn" class="w-full text-left px-4 py-2 text-gray-200 hover:bg-gray-700 rounded-lg">
+    <nav class="w-full">
+        <!-- Desktop Navbar -->
+        <div class="hidden sm:block">
+            <div class="flex bg-gray-900 h-20 justify-between items-center shadow-xl rounded-2xl w-[97.5%] m-auto my-3">
+                <!-- Logo -->
+                <div class="ml-20">
+                    <img class="w-12" src="img/portfolio-svgrepo-com.svg" alt="Logo">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="mr-20">
+                    <ul class="flex gap-6 items-center">
+                        <li><a href="index.html" class="text-gray-200 font-bold text-xl hover:text-gray-400">Inicio</a></li>
+                        <li><a href="Projects.html" class="text-gray-200 font-bold text-xl hover:text-gray-400">Products</a></li>
+                        <li><a href="About.html" class="text-gray-200 font-bold text-xl hover:text-gray-400">Contact</a></li>
+                        <li class="relative">
+                            <button id="desktopColorBtn" class="p-2">
+                                <img class="w-[21px]" src="img/settingsw.svg" alt="Settings">
+                            </button>
+                            <div id="desktopColorMenu" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-lg">
+                                <button id="desktopChangeBgBtn" class="w-full text-left px-4 py-2 text-gray-200 hover:bg-gray-700 rounded-lg">
+                                    Cambiar Fondo
+                                </button>
+                                <button id="desktopChangeTextBtn" class="w-full text-left px-4 py-2 text-gray-200 hover:bg-gray-700 rounded-lg">
+                                    Cambiar Fuentes
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navbar -->
+        <div class="sm:hidden">
+            <div class="flex bg-gray-900 h-20 justify-between items-center shadow-xl rounded-2xl w-[97.5%] m-auto my-3">
+                <!-- Logo -->
+                <div class="ml-4">
+                    <img class="w-12" src="img/portfolio-svgrepo-com.svg" alt="Logo">
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="mr-4 text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden w-[97.5%] m-auto bg-gray-900 shadow-xl rounded-b-2xl">
+                <ul class="py-4">
+                    <li><a href="index.html" class="block text-center py-3 text-gray-200 font-bold text-xl hover:bg-gray-800">Inicio</a></li>
+                    <li><a href="Projects.html" class="block text-center py-3 text-gray-200 font-bold text-xl hover:bg-gray-800">Products</a></li>
+                    <li><a href="About.html" class="block text-center py-3 text-gray-200 font-bold text-xl hover:bg-gray-800">Contact</a></li>
+                    <li class="relative">
+                        <button id="mobileColorBtn" class="w-full py-3">
+                            <img class="w-[21px] mx-auto" src="img/settingsw.svg" alt="Settings">
+                        </button>
+                        <div id="mobileColorMenu" class="hidden w-full bg-gray-800">
+                            <button id="mobileChangeBgBtn" class="w-full text-left px-4 py-2 text-gray-200 hover:bg-gray-700">
                                 Cambiar Fondo
                             </button>
-                            <button id="changeTextBtn" class="w-full text-left px-4 py-2 text-gray-200 hover:bg-gray-700 rounded-lg">
+                            <button id="mobileChangeTextBtn" class="w-full text-left px-4 py-2 text-gray-200 hover:bg-gray-700">
                                 Cambiar Fuentes
                             </button>
                         </div>
-                    </a>
+                    </li>
                 </ul>
-            </section>
-        </div>
-    </nav>
-
-    <!-- ////////////////////// -->
-    <!-- NAVIGATION BAR MOVIL -->
-    <!-- ////////////////////// -->
-    <nav class="sm:hidden flex h-30 justify-center items-center w-full m-auto z-5 relative">
-        <!-- nav content -->
-        <div class="flex bg-gray-900 h-20 justify-between items-center shadow-xl rounded-2xl w-[97.5%] m-auto my-3 relative">
-            
-            <!-- nav-logo -->
-            <section class="">
-                <img class="w-12 ml-4" src="img/portfolio-svgrepo-com.svg" alt="">
-            </section>
-            
-            <!-- Menu button -->
-            <button id="menuButton" class="mr-4 text-white">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-
-        <!-- Mobile menu-->
-        <div id="mobileMenu" class="hidden absolute top-22 w-[97.5%] m-auto bg-gray-900 shadow-xl rounded-b-2xl">
-            <ul class="flex flex-col items-center py-4">
-                <a href="index.html" class="w-full text-center py-3"><li class="text-gray-200 font-bold text-xl hover:text-gray-400">Inicio</li></a>
-                <a href="Projects.html" class="w-full text-center py-3"><li class="text-gray-200 font-bold text-xl hover:text-gray-400">Products</li></a>
-                <a href="About.html" class="w-full text-center py-3"><li class="text-gray-200 font-bold text-xl hover:text-gray-400">Contact</li></a>
-                <a href="#" class="w-full text-center py-3"><li class="flex justify-center"><img class="w-[21px]" src="img/settingsw.svg" alt=""></li></a>
-            </ul>
+            </div>
         </div>
     </nav>
 
@@ -95,9 +105,9 @@
      
                  <!-- Project description -->
                  <div class="text-[#fffc] font-bold border-2 border-gray-300 rounded-2xl p-4 my-4">
-                     <h2 class="underline">DESCRIPTION</h2>
+                     <h2 class="underline">DESCRIPCIÓN</h2>
                      <br>
-                     <p class="w-full">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil aliquam quo enim quas minus, nesciunt sequi odio assumenda perferendis dolorem, sunt perspiciatis hic consectetur dignissimos, eius nulla minima molestias velit.</p>
+                     <p class="w-full">Desarrollo de una aplicación web de comercio electrónico con funcionalidades avanzadas de carrito de compras, sistema de pagos integrado y panel de administración. Implementación de diseño responsivo y optimización para dispositivos móviles.</p>
                  </div>
      
                  <!-- Projects -->
@@ -120,11 +130,11 @@
      
                                  <ul class="flex gap-2">
                                      <!-- Tool -->
-                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">JavaScript</li>                                
+                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">React</li>                                
                                      <!-- Tool -->
-                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">JavaScript</li>                                
+                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">Node.js</li>                                
                                      <!-- Tool -->
-                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">JavaScript</li>
+                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">MongoDB</li>
                                  </ul>
                              </div>
                          </li>
@@ -141,9 +151,9 @@
      
                  <!-- Project description -->
                  <div class="text-[#fffc] font-bold border-2 border-gray-300 rounded-2xl p-4 my-4">
-                     <h2 class="underline">DESCRIPTION</h2>
+                     <h2 class="underline">DESCRIPCIÓN</h2>
                      <br>
-                     <p class="w-full">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil aliquam quo enim quas minus, nesciunt sequi odio assumenda perferendis dolorem, sunt perspiciatis hic consectetur dignissimos, eius nulla minima molestias velit.</p>
+                     <p class="w-full">Plataforma de gestión de contenido con sistema de autenticación, editor de texto enriquecido y almacenamiento en la nube. Incluye funcionalidades de búsqueda avanzada y filtrado de contenido.</p>
                  </div>
      
                  <!-- Projects -->
@@ -166,11 +176,11 @@
      
                                  <ul class="flex gap-2">
                                      <!-- Tool -->
-                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">JavaScript</li>                                
+                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">Vue.js</li>                                
                                      <!-- Tool -->
-                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">JavaScript</li>                                
+                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">Express</li>                                
                                      <!-- Tool -->
-                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">JavaScript</li>
+                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">PostgreSQL</li>
                                  </ul>
                              </div>
                          </li>
@@ -187,9 +197,9 @@
      
                  <!-- Project description -->
                  <div class="text-[#fffc] font-bold border-2 border-gray-300 rounded-2xl p-4 my-4">
-                     <h2 class="underline">DESCRIPTION</h2>
+                     <h2 class="underline">DESCRIPCIÓN</h2>
                      <br>
-                     <p class="w-full">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil aliquam quo enim quas minus, nesciunt sequi odio assumenda perferendis dolorem, sunt perspiciatis hic consectetur dignissimos, eius nulla minima molestias velit.</p>
+                     <p class="w-full">Aplicación móvil de seguimiento de ejercicios y nutrición con integración de wearables, gráficos de progreso y planificación de rutinas personalizadas. Incluye sistema de notificaciones y sincronización en la nube.</p>
                  </div>
      
                  <!-- Projects -->
@@ -212,11 +222,11 @@
      
                                  <ul class="flex gap-2">
                                      <!-- Tool -->
-                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">JavaScript</li>                                
+                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">React Native</li>                                
                                      <!-- Tool -->
-                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">JavaScript</li>                                
+                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">Firebase</li>                                
                                      <!-- Tool -->
-                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">JavaScript</li>
+                                     <li class="text-[#fff] bg-gray-500 rounded-2xl px-3 py-1">Redux</li>
                                  </ul>
                              </div>
                          </li>

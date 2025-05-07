@@ -46,58 +46,107 @@ function rgbToHex(rgb) {
     }).join('');
 }
 
-// Funciones para el menú móvil
-function initializeMobileMenu() {
-    const menuButton = document.getElementById('menuButton');
+// Función para inicializar el menú móvil
+function initMobileMenu() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
+    const mobileColorBtn = document.getElementById('mobileColorBtn');
+    const mobileColorMenu = document.getElementById('mobileColorMenu');
 
-    if (menuButton && mobileMenu) {
-        menuButton.addEventListener('click', () => {
+    if (mobileMenuBtn && mobileMenu) {
+        // Toggle menú móvil
+        mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            // Cerrar menú de colores si está abierto
+            if (mobileColorMenu) {
+                mobileColorMenu.classList.add('hidden');
+            }
         });
+
+        // Cerrar menú al hacer clic en enlaces
+        const menuLinks = mobileMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Toggle menú de colores móvil
+        if (mobileColorBtn && mobileColorMenu) {
+            mobileColorBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                mobileColorMenu.classList.toggle('hidden');
+            });
+        }
     }
 }
 
-// Funciones para el cambio de colores
-function initializeColorChanger() {
-    const changeColorBtn = document.getElementById('changeColor');
-    const colorMenu = document.getElementById('colorMenu');
-    const changeBgBtn = document.getElementById('changeBgBtn');
-    const changeTextBtn = document.getElementById('changeTextBtn');
+// Función para inicializar el menú de colores
+function initColorMenu() {
+    // Desktop color menu
+    const desktopColorBtn = document.getElementById('desktopColorBtn');
+    const desktopColorMenu = document.getElementById('desktopColorMenu');
+    const desktopChangeBgBtn = document.getElementById('desktopChangeBgBtn');
+    const desktopChangeTextBtn = document.getElementById('desktopChangeTextBtn');
 
-    if (!changeColorBtn || !colorMenu || !changeBgBtn || !changeTextBtn) return;
+    // Mobile color menu
+    const mobileChangeBgBtn = document.getElementById('mobileChangeBgBtn');
+    const mobileChangeTextBtn = document.getElementById('mobileChangeTextBtn');
 
-    // Mostrar/ocultar menú al hacer clic en el botón de configuración
-    changeColorBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        colorMenu.classList.toggle('hidden');
-    });
+    // Función para cambiar color de fondo
+    function changeBackgroundColor() {
+        const newColor = getRandomColor();
+        document.body.style.backgroundColor = newColor;
+        // Cerrar menús de colores
+        if (desktopColorMenu) desktopColorMenu.classList.add('hidden');
+        if (mobileColorMenu) mobileColorMenu.classList.add('hidden');
+    }
 
-    // Cerrar menú al hacer clic fuera
-    document.addEventListener('click', (e) => {
-        if (!changeColorBtn.contains(e.target)) {
-            colorMenu.classList.add('hidden');
-        }
-    });
-
-    // Cambiar solo el fondo al hacer clic en el botón
-    changeBgBtn.addEventListener('click', () => {
-        const newBgColor = getRandomColor();
-        document.body.style.backgroundColor = newBgColor;
-        colorMenu.classList.add('hidden');
-    });
-
-    // Cambiar solo el color del texto al hacer clic en el botón
-    changeTextBtn.addEventListener('click', () => {
-        const currentBgColor = window.getComputedStyle(document.body).backgroundColor;
-        const newTextColor = getContrastColor(rgbToHex(currentBgColor));
+    // Función para cambiar color de texto
+    function changeTextColor() {
+        const currentBg = window.getComputedStyle(document.body).backgroundColor;
+        const newTextColor = getContrastColor(rgbToHex(currentBg));
         
         const textElements = document.querySelectorAll('h1, h2, h3, p, li, a, button, input, textarea');
         textElements.forEach(element => {
             element.style.color = newTextColor;
         });
         
-        colorMenu.classList.add('hidden');
+        // Cerrar menús de colores
+        if (desktopColorMenu) desktopColorMenu.classList.add('hidden');
+        if (mobileColorMenu) mobileColorMenu.classList.add('hidden');
+    }
+
+    // Desktop color menu handlers
+    if (desktopColorBtn && desktopColorMenu) {
+        desktopColorBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            desktopColorMenu.classList.toggle('hidden');
+        });
+
+        if (desktopChangeBgBtn) {
+            desktopChangeBgBtn.addEventListener('click', changeBackgroundColor);
+        }
+
+        if (desktopChangeTextBtn) {
+            desktopChangeTextBtn.addEventListener('click', changeTextColor);
+        }
+    }
+
+    // Mobile color menu handlers
+    if (mobileChangeBgBtn) {
+        mobileChangeBgBtn.addEventListener('click', changeBackgroundColor);
+    }
+
+    if (mobileChangeTextBtn) {
+        mobileChangeTextBtn.addEventListener('click', changeTextColor);
+    }
+
+    // Cerrar menús al hacer clic fuera
+    document.addEventListener('click', (e) => {
+        if (desktopColorMenu && !desktopColorBtn.contains(e.target) && !desktopColorMenu.contains(e.target)) {
+            desktopColorMenu.classList.add('hidden');
+        }
     });
 }
 
@@ -164,7 +213,7 @@ function initializeEmailJS() {
 
 // Inicializar todo cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
-    initializeMobileMenu();
-    initializeColorChanger();
+    initMobileMenu();
+    initColorMenu();
     initializeEmailJS();
 });
